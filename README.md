@@ -1,44 +1,98 @@
-# 视频自动抽帧工具
+# 视频抽帧工具 (Video Frame Extractor)
 
-这是一个基于 Flask 的视频自动抽帧工具，支持在 Windows 11 下运行。用户可以通过简单的交互页面上传视频，并自动处理抽帧。
+## 功能描述
 
-## 功能
-- 支持上传视频文件
-- 使用 FFmpeg 实现视频抽帧，每隔 30 帧抽取一帧
-- 自动生成处理后的视频并提供下载
+这是一个简单易用的视频抽帧工具，支持：
 
-## 安装与运行
+- 灵活设置抽帧间隔
+- GPU 加速处理
+- 支持多种视频格式
+- 实时处理进度显示
 
-### 环境要求
-- Windows 11
+
+
+## 系统要求
+
 - Python 3.7+
-- FFmpeg 已安装并配置到系统 PATH
+- Windows 10/11
+- NVIDIA GPU（可选，用于GPU加速）
 
-### 安装步骤
-1. 克隆项目到本地：
-   ```bash
-   git clone https://github.com/your-username/video-frame-extractor.git
-   cd video-frame-extractor
-   
+# **项目结构**
 
-1. 安装依赖：
+```
+video-frame-extractor/
+│
+├── app.py              # 主程序代码
+└── tools/             # 工具目录
+    └── ffmpeg-7.1/    # FFmpeg 文件夹
+        └── bin/       # FFmpeg 可执行文件目录
+            ├── ffmpeg.exe
+            └── ffprobe.exe
+```
 
-   ```
-   pip install -r requirements.txt
-   ```
+## 运行方法
 
-2. 运行程序：
+### 方法一：直接运行
 
-   ```
-   python app.py
-   ```
+```bash
+# 克隆项目
+git clone https://github.com/yourusername/video-frame-extractor.git
+cd video-frame-extractor
 
-## 使用方法
+# 运行程序
+python app.py
+```
 
-1. 打开窗口后上传视频文件。
-2. 点击“开始处理”按钮，等待处理完成。
-3. 下载处理后的视频文件。
+### 方法二：创建虚拟环境（推荐）
 
-## 开源协议
+```bash
+# 创建虚拟环境
+python -m venv venv
 
-本项目基于 MIT 协议开源，欢迎自由使用与修改。
+# 激活虚拟环境
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
+
+# 运行程序
+python app.py
+```
+
+## 使用说明
+
+1. 点击 "选择视频并开始处理" 按钮
+2. 选择需要抽帧的视频文件
+3. 设置抽帧间隔（默认30）
+4. 可选择是否使用 GPU 加速
+5. 等待处理完成
+
+## 常见问题
+
+- 确保 FFmpeg 在系统 PATH 中
+- GPU 加速需要 NVIDIA 显卡支持
+- 视频文件路径不要包含中文
+
+## 技术细节
+
+- GUI 框架：Tkinter
+- 视频处理：FFmpeg
+- 编程语言：Python
+
+## 性能优化
+
+- 支持 GPU 硬件加速
+- 多线程处理
+- 实时进度显示
+
+## 许可证
+
+[Apache-2.0 license](https://github.com/360PB/video-frame-extractor#)
+
+## 版本
+
+v1.0 - 2024年12月25日
+
+## 贡献
+
+欢迎提交 Issues 和 Pull Requests！
