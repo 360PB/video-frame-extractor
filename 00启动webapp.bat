@@ -18,7 +18,7 @@ echo "%CD%"| findstr /R /C:"[!#\$%&()\*+,;<=>?@\[\]\^`{|}~\u4E00-\u9FFF ] " >nul
 )
 
 :: 设置环境变量PATH，添加FFmpeg的路径
-::set "PATH=%PATH%;%Git_DIR%\tools\ffmpeg-7.1\bin"
+set "PATH=%PATH%;%Git_DIR%\tools\ffmpeg-7.1\bin"
 
 :: 设置Conda路径
 
