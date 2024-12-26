@@ -1,12 +1,24 @@
 import os
+import sys
 import subprocess
 from tkinter import Tk, Text, filedialog, messagebox, BooleanVar, Checkbutton
 from tkinter import ttk
 import threading
 import json
 
-FFMPEG_PATH = "ffmpeg"  # 直接使用环境变量中的ffmpeg
-FFPROBE_PATH = "ffprobe"  # 直接使用环境变量中的ffprobe
+def get_resource_path(relative_path):
+    """获取资源文件的绝对路径，兼容开发和编译后的环境"""
+    if getattr(sys, 'frozen', False):
+        # 打包后的环境中
+        base_path = sys._MEIPASS
+    else:
+        # 开发环境中
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, 'files', relative_path)
+
+FFMPEG_PATH = get_resource_path('ffmpeg.exe')  # 直接使用环境变量中的ffmpeg
+FFPROBE_PATH = get_resource_path('ffprobe.exe')  # 直接使用环境变量中的ffprobe
 
 def log_message(status_text, message):
     """统一的日志输出函数"""
