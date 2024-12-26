@@ -1,5 +1,8 @@
 # 视频抽帧工具 (Video Frame Extractor)
 
+![抽帧](https://github.com/user-attachments/assets/d616f57d-9847-4aa5-bd91-0ee30b2c7a93)
+
+
 ## 功能描述
 
 这是一个简单易用的视频抽帧工具，支持：
