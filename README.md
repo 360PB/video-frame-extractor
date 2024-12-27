@@ -28,11 +28,10 @@ https://pan.quark.cn/s/ad162c9491f6
 video-frame-extractor/
 │
 ├── app.py              # 主程序代码
-└── tools/             # 工具目录
-    └── ffmpeg-7.1/    # FFmpeg 文件夹
-        └── bin/       # FFmpeg 可执行文件目录
-            ├── ffmpeg.exe
-            └── ffprobe.exe
+└── files/             # 工具目录
+    ├── ffmpeg.exe    # FFmpeg 
+    └── ffprobe.exe   
+
 ```
 
 ## 运行方法
